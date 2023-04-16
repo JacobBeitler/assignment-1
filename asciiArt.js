@@ -1,3 +1,11 @@
+var figlet = require("figlet")
 const { argv } = require('node:process')
 
-console.log(argv[2])
+figlet(argv[2], function (err, data) {
+    if (err) {
+        console.log("Something went wrong...")
+        console.dir(err)
+        return
+    }
+    console.log(data)
+})
